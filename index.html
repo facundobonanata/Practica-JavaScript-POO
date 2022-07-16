@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!--Container con margin arriba y abajo de 5-->
+    <div class="container my-5">
+      <h1>Estudiantes y profesores</h1>
+      <form id="formulario">
+        <!-- input form control, margen btn de 2 (mb-2)-->
+        <input
+          class="input form-control mb-2"
+          type="text"
+          name="nombre"
+          placeholder="Ingrese nombre"
+          required
+        />
+        <input
+          class="input form-control mb-2"
+          type="number"
+          name="edad"
+          placeholder="Ingrese edad"
+          required
+        />
+        <!--Select de boostrap-->
+        <select class="form-select mb-2" name="opcion">
+          <option value="Estudiante" selected>Estudiante</option>
+          <option value="Profesor">Profesor</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Agregar</button>
+      </form>
+      <!--Columna, margin top de 3-->
+      <section class="row mt-3">
+        <!--primera columna, aca van las tarjetas, se pintan los templates-->
+        <div class="col-6" id="cardsEstudiantes"></div>
+        <div class="col-6" id="cardsProfesores"></div>
+      </section>
+    </div>
+
+    <template id="templateEstudiante">
+      <!--card article con clase card, margin buttom de 2(se apilan lso estudiantes)-->
+      <article class="card mb-2">
+        <div class="card-body">
+          <h5>
+            <span class="text-primary">Nombre</span>
+            <span class="badge bg-success">Aprobado</span>
+          </h5>
+          <h6>Estudiante</h6>
+          <p class="lead">edad</p>
+          <button class="btn btn-success">Aprobar</button>
+          <button class="btn btn-danger">Reprobar</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="templateProfesor">
+      <article class="card- mb-2 bg-dark text-white">
+        <div class="card-body">
+          <h5>Nombre</h5>
+          <h6></h6>
+          <p class="lead">Edad</p>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
